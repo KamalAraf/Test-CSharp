@@ -7,10 +7,15 @@
             Console.WriteLine("Test-CSharp");
             Console.WriteLine();
 
-            Random random = new Random();
+            Essere essere1 = new Essere("Test", 500, 10);
+            Essere essere2 = new Essere();
 
-            random.GeneraNumero("double", 2, 6);
-            Console.WriteLine(random.GeneraNumero("double", 2, 6));
+            for (int i = 0; i < 3; i++)
+            {
+                essere2.Attacca(ref essere1);
+            }
+
+            Console.WriteLine(essere1.vita);
         }
     }
 }

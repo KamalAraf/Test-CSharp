@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Test_CSharp
 {
-    internal class Random
+    internal class Funzioni
     {
-        public Random() { }
-        private ArgumentException GestisciErrore(string tipo)
+        public Funzioni() { }
+        private ArgumentException GestisciErroreRandom(string tipo)
         {
             Console.WriteLine("[Random.cs - Metodo GeneraNumero] Errore, Tipo non valido: " + tipo + ".");
             throw new ArgumentException("[Random.cs - Metodo GeneraNumero] Errore, Tipo non valido: " + tipo + ".");
@@ -24,7 +24,7 @@ namespace Test_CSharp
                 "decimal" => Math.Round(rnd.NextDouble() * (end - start) + start, 2),
                 "float" => Math.Round(rnd.NextSingle() * (end - start) + start, 4),
                 "double" => Math.Round(rnd.NextDouble() * (end - start) + start, 8),
-                _ => throw GestisciErrore(tipo)
+                _ => throw GestisciErroreRandom(tipo)
             };
         }
     }
