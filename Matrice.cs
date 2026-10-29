@@ -8,8 +8,8 @@ namespace Test_CSharp
 {
     internal class Matrice
     {
-        private int _x;
-        private int _y;
+        private int _x; // larghezza
+        private int _y; // altezza
         private float[,] _matrice;
 
         public Matrice()
@@ -21,6 +21,11 @@ namespace Test_CSharp
 
         public Matrice(int ny, int nx) // Prima riga indica la x, seconda la y (normali matrici è al contrario)
         {
+            if (nx < 0 || ny < 0)
+            {
+                throw new ArgumentException("[Matrice.cs - Costruttore] Errore, Uno dei due Valori della dimensione è Negativo.");
+            }
+
             _x = nx;
             _y = ny;
             _matrice = new float[ny, nx]; // Tutti i valori iniziano a 0
@@ -28,11 +33,29 @@ namespace Test_CSharp
 
         public void Inserisci(int posx, int posy, float n)
         {
+            if (posx > _x - 1 || posy > _y - 1)
+            {
+                throw new ArgumentException("[Matrice.cs - Metodo Inserisci] Errore, Ordinata o Ascissa al di fuori della dimensione Matrice.");
+            }
+            if (posx < 0 || posy < 0)
+            {
+                throw new ArgumentException("[Matrice.cs - Metodo Inserisci] Errore, Ordinata o Ascissa negativa.");
+            }
+
             _matrice[posy, posx] = n; // Inversione a causa del formato
         }
 
         public void Inserisci(Punto punto, float n) // Metodo con anche il punto
         {
+            if (punto.x > _x - 1 || punto.y > _y - 1)
+            {
+                throw new ArgumentException("[Matrice.cs - Metodo Inserisci] Errore, Punto al di fuori della dimensione Matrice.");
+            }
+            if (punto.x < 0 || punto.y < 0)
+            {
+                throw new ArgumentException("[Matrice.cs - Metodo Inserisci] Errore, Punto con Ordinata o Ascissa negativa.");
+            }
+
             _matrice[punto.x, punto.y] = n;
         }
 
