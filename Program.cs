@@ -20,10 +20,16 @@
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    Console.Write(matrice[i, j] + " ");
+                    Console.Write(matrice[i, j]);
+                    if (j != 4)
+                    {
+                        Console.Write(", ");
+                    }
                 }
-                Console.Write("| ");
+                Console.WriteLine();
             }
+
+            Console.WriteLine(matrice[4, 1]);
         }
     }
 }
