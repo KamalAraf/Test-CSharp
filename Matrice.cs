@@ -23,6 +23,7 @@ namespace Test_CSharp
         {
             if (nx < 0 || ny < 0)
             {
+                Console.WriteLine("[Matrice.cs - Costruttore] Errore, Uno dei due Valori della dimensione è Negativo.");
                 throw new ArgumentException("[Matrice.cs - Costruttore] Errore, Uno dei due Valori della dimensione è Negativo.");
             }
 
@@ -35,10 +36,12 @@ namespace Test_CSharp
         {
             if (posx > _x - 1 || posy > _y - 1)
             {
+                Console.WriteLine("[Matrice.cs - Metodo Inserisci] Errore, Ordinata o Ascissa al di fuori della dimensione Matrice.");
                 throw new ArgumentException("[Matrice.cs - Metodo Inserisci] Errore, Ordinata o Ascissa al di fuori della dimensione Matrice.");
             }
             if (posx < 0 || posy < 0)
             {
+                Console.WriteLine("[Matrice.cs - Metodo Inserisci] Errore, Ordinata o Ascissa negativa.");
                 throw new ArgumentException("[Matrice.cs - Metodo Inserisci] Errore, Ordinata o Ascissa negativa.");
             }
 
@@ -49,14 +52,48 @@ namespace Test_CSharp
         {
             if (punto.x > _x - 1 || punto.y > _y - 1)
             {
+                Console.WriteLine("[Matrice.cs - Metodo Inserisci] Errore, Punto al di fuori della dimensione Matrice.");
                 throw new ArgumentException("[Matrice.cs - Metodo Inserisci] Errore, Punto al di fuori della dimensione Matrice.");
             }
             if (punto.x < 0 || punto.y < 0)
             {
+                Console.WriteLine("[Matrice.cs - Metodo Inserisci] Errore, Punto con Ordinata o Ascissa negativa.");
                 throw new ArgumentException("[Matrice.cs - Metodo Inserisci] Errore, Punto con Ordinata o Ascissa negativa.");
             }
 
             _matrice[punto.x, punto.y] = n;
+        }
+
+        public void StampaElemento(int posx, int posy)
+        {
+            if (posx > _x - 1 || posy > _y - 1)
+            {
+                Console.WriteLine("[Matrice.cs - Metodo StampaElemento] Errore, Ordinata o Ascissa al di fuori della dimensione Matrice.");
+                throw new ArgumentException("[Matrice.cs - Metodo StampaElemento] Errore, Ordinata o Ascissa al di fuori della dimensione Matrice.");
+            }
+            if (posx < 0 || posy < 0)
+            {
+                Console.WriteLine("[Matrice.cs - Metodo StampaElemento] Errore, Ordinata o Ascissa negativa.");
+                throw new ArgumentException("[Matrice.cs - Metodo StampaElemento] Errore, Ordinata o Ascissa negativa.");
+            }
+
+            Console.WriteLine(_matrice[posx, posy]);
+        }
+
+        public void StampaElemento(Punto punto)
+        {
+            if (punto.x > _x - 1 || punto.y > _y - 1)
+            {
+                Console.WriteLine("[Matrice.cs - Metodo StampaElemento] Errore, Punto al di fuori della dimensione Matrice.");
+                throw new ArgumentException("[Matrice.cs - Metodo StampaElemento] Errore, Punto al di fuori della dimensione Matrice.");
+            }
+            if (punto.x < 0 || punto.y < 0)
+            {
+                Console.WriteLine("[Matrice.cs - Metodo StampaElemento] Errore, Punto con Ordinata o Ascissa negativa.");
+                throw new ArgumentException("[Matrice.cs - Metodo StampaElemento] Errore, Punto con Ordinata o Ascissa negativa.");
+            }
+
+            Console.WriteLine(_matrice[punto.x, punto.y]);
         }
 
         public void Stampa() // Stampa diretto in console

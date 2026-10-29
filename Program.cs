@@ -13,6 +13,11 @@
             matrice.Inserisci(punto, 6);
 
             matrice.Stampa();
+            matrice.StampaElemento(punto);
+
+            // matrice.StampaElemento(6, 5); // Test dell'errore
+
+            matrice.Inserisci(-4, 3, 2);
         }
     }
 }
