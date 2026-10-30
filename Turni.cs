@@ -48,5 +48,28 @@ namespace Test_CSharp
 
             _inizio = (int) funzioni.GeneraNumero("int", 0, 1);
         }
+
+        public void Inizia()
+        {
+            int co0 = 0;
+            int co1 = 0;
+
+            for (int i = 0; i < _oggetti0.Length; i++)
+            {
+                co0++;
+            }
+            for (int i = 0; i < _oggetti1.Length; i++)
+            {
+                co1++;
+            }
+
+            if (_inizio == 0)
+            {
+                while (co0 != 0 || co1 != 0)
+                {
+
+                }
+            }
+        }
     }
 }
