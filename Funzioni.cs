@@ -8,6 +8,7 @@ namespace Test_CSharp
 {
     internal class Funzioni
     {
+        private Random rnd = new Random();
         public Funzioni() { }
         private ArgumentException GestisciErroreRandom(string tipo)
         {
@@ -16,11 +17,9 @@ namespace Test_CSharp
         }
         public double GeneraNumero(string tipo, int start, int end)
         {
-            System.Random rnd = new System.Random();
-
             return tipo switch
             {
-                "int" => rnd.Next(start, end),
+                "int" => rnd.Next(start, end + 1),
                 "decimal" => Math.Round(rnd.NextDouble() * (end - start) + start, 2),
                 "float" => Math.Round(rnd.NextSingle() * (end - start) + start, 4),
                 "double" => Math.Round(rnd.NextDouble() * (end - start) + start, 8),

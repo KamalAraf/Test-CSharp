@@ -9,7 +9,14 @@
 
             Funzioni funzioni = new Funzioni();
 
-            
+            ETurni test1 = new ETurni("test1", 500, 50);
+            ETurni test2 = new ETurni("test2", 800, 40);
+
+            ETurni[] A = [test1];
+            ETurni[] B = [test2];
+
+            Turni arena = new Turni(A, B);
+            Console.WriteLine(arena.inizio);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -71,6 +72,14 @@ namespace Test_CSharp
                     nemico = null;
                 }
             }
+        }
+        public virtual void Stampa()
+        {
+            Console.WriteLine("Nome: " + _nome + ", Vita: " + _vita + ", Danno:" + _danno + ".");
+        }
+        public override string ToString()
+        {
+            return "Nome: " + _nome + ", Vita: " + _vita + ", Danno:" + _danno + ".";
         }
     }
 }
