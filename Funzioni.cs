@@ -27,7 +27,7 @@ namespace Test_CSharp
             };
         }
 
-        public bool EsisteOggetto(object oggetto)
+        public bool EsisteOggetto(object oggetto) // da sistemare in modo che si può passare tutto con ref
         {
             return oggetto is not null;
         }

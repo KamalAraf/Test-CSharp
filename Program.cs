@@ -21,6 +21,8 @@
             arena.Stampa();
             Console.WriteLine();
             Console.WriteLine(arena.ToString());
+
+            // Da fixare ETurni.cs, Funzioni.cs nel controllo se esiste in modo da usare ref generale
         }
     }
 }

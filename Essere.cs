@@ -60,7 +60,7 @@ namespace Test_CSharp
         }
         public virtual bool Attacca(Essere nemico) // ritorna se è morto o no
         {
-            if (funzioni.EsisteOggetto(nemico) == false)
+            if (funzioni.EsisteOggetto(nemico) == false) // da fixare in Funzioni.cs ed implementare che si passa con REF
             {
                 Console.WriteLine("Essere non esiste.");
                 return true;
