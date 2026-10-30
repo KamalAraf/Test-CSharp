@@ -56,7 +56,7 @@ namespace Test_CSharp
             _vita = hp;
             _danno = dmg;
         }
-        public void Attacca(ref Essere nemico)
+        public virtual void Attacca(ref Essere nemico)
         {
             if (funzioni.EsisteOggetto(nemico) == false)
             {
