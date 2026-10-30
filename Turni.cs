@@ -51,8 +51,12 @@ namespace Test_CSharp
 
         public void Inizia()
         {
-            int co0 = 0;
-            int co1 = 0;
+            int co0 = -1; // contatore numero di elementi di Eturni nell'oggetto 0
+            int co1 = -1; // contatore numero di elementi di Eturni nell'oggetto 1
+            int i0 = 0; // indice dell'array oggetti 0
+            int i1 = 0; // indice dell'array oggetti 1
+            bool morto0 = false; // bool necessario per controlli
+            bool morto1 = false; // bool necessario per controlli
 
             for (int i = 0; i < _oggetti0.Length; i++)
             {
@@ -67,7 +71,33 @@ namespace Test_CSharp
             {
                 while (co0 != 0 || co1 != 0)
                 {
+                    morto1 = _oggetti0[i0].Attacca(_oggetti1[i1]);
 
+                    if (morto1 == true)
+                    {
+                        if(i1 == co1)
+                        {
+                            break;
+                        }
+
+                        i1++;
+                        morto1 = false;
+
+                    } else
+                    {
+                        morto0 = _oggetti1[i1].Attacca(_oggetti0[i0]);
+
+                        if (morto0 == true)
+                        {
+                            if (i0 == co0)
+                            {
+                                break;
+                            }
+
+                            i0++;
+                            morto0 = false;
+                        }
+                    }
                 }
             }
         }

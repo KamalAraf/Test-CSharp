@@ -57,11 +57,12 @@ namespace Test_CSharp
             _vita = hp;
             _danno = dmg;
         }
-        public virtual void Attacca(ref Essere nemico)
+        public virtual bool Attacca(Essere nemico) // ritorna se è morto o no
         {
             if (funzioni.EsisteOggetto(nemico) == false)
             {
                 Console.WriteLine("Essere non esiste.");
+                return true;
             } else
             {
                 nemico.vita = nemico.vita - _danno;
@@ -70,7 +71,9 @@ namespace Test_CSharp
                 {
                     Console.WriteLine("Ucciso " + nemico.nome + ".");
                     nemico = null;
+                    return true;
                 }
+                return false;
             }
         }
         public virtual void Stampa()
