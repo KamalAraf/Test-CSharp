@@ -7,15 +7,17 @@
             Console.WriteLine("Test-CSharp");
             Console.WriteLine();
 
+            Funzioni funzioni = new Funzioni();
+
             Essere essere1 = new Essere("Test", 500, 10);
             Essere essere2 = new Essere();
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 essere2.Attacca(ref essere1);
             }
 
-            Console.WriteLine(essere1.vita);
+            Console.WriteLine(funzioni.EsisteOggetto(essere1));
         }
     }
 }

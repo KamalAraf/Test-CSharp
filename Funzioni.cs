@@ -27,5 +27,10 @@ namespace Test_CSharp
                 _ => throw GestisciErroreRandom(tipo)
             };
         }
+
+        public bool EsisteOggetto(object oggetto)
+        {
+            return oggetto is not null;
+        }
     }
 }
