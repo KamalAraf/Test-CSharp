@@ -12,12 +12,10 @@
             Essere essere1 = new Essere("Test", 500, 10);
             Essere essere2 = new Essere();
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
                 essere2.Attacca(ref essere1);
             }
-
-            Console.WriteLine(funzioni.EsisteOggetto(essere1));
         }
     }
 }

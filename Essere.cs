@@ -58,13 +58,20 @@ namespace Test_CSharp
         }
         public void Attacca(ref Essere nemico)
         {
-            nemico.vita = nemico.vita - _danno;
-
-            if (nemico.vita <= 0)
+            if (funzioni.EsisteOggetto(nemico) == false)
             {
-                Console.WriteLine("Ucciso " + nemico.nome + ".");
-                nemico = null;
+                Console.WriteLine("Essere non esiste.");
+            } else
+            {
+                nemico.vita = nemico.vita - _danno;
+
+                if (nemico.vita <= 0)
+                {
+                    Console.WriteLine("Ucciso " + nemico.nome + ".");
+                    nemico = null;
+                }
             }
         }
     }
 }
+
