@@ -17,6 +17,10 @@
 
             Turni arena = new Turni(A, B);
             Console.WriteLine(arena.inizio);
+
+            arena.Stampa();
+            Console.WriteLine();
+            Console.WriteLine(arena.ToString());
         }
     }
 }

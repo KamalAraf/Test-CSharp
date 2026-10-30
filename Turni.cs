@@ -101,5 +101,79 @@ namespace Test_CSharp
                 }
             }
         }
+
+        public virtual void Stampa()
+        {
+            string risultato0 = "[";
+            string risultato1 = "[";
+
+            for (int i = 0; i < _oggetti0.Length; i++)
+            {
+                risultato0 += _oggetti0[i].nome;
+                if (i != _oggetti0.Length - 1)
+                {
+                    risultato0 += ", ";
+                }
+            }
+
+            for (int i = 0; i < _oggetti1.Length; i++)
+            {
+                risultato1 += _oggetti1[i].nome;
+                if (i != _oggetti1.Length - 1)
+                {
+                    risultato1 += ", ";
+                }
+            }
+
+            risultato0 += "]";
+            risultato1 += "]";
+
+            if (inizio == 0)
+            {
+                Console.WriteLine(risultato0 + " (inizio)");
+                Console.WriteLine(risultato1);
+            } else
+            {
+
+                Console.WriteLine(risultato0);
+                Console.WriteLine(risultato1 + " (inizio)");
+            }
+        }
+
+        public override string ToString()
+        {
+            string risultato0 = "[";
+            string risultato1 = "[";
+
+            for (int i = 0; i < _oggetti0.Length; i++)
+            {
+                risultato0 += _oggetti0[i].nome;
+                if (i != _oggetti0.Length - 1)
+                {
+                    risultato0 += ", ";
+                }
+            }
+
+            for (int i = 0; i < _oggetti1.Length; i++)
+            {
+                risultato1 += _oggetti1[i].nome;
+                if (i != _oggetti1.Length - 1)
+                {
+                    risultato1 += ", ";
+                }
+            }
+
+            risultato0 += "]";
+            risultato1 += "]";
+
+            if (inizio == 0)
+            {
+                return (risultato0 + " (inizio)") + Environment.NewLine + risultato1;
+            }
+            else
+            {
+                return (risultato0) + Environment.NewLine + (risultato1 + " (inizio)");
+            }
+        }
     }
 }

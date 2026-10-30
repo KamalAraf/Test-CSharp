@@ -42,6 +42,7 @@ namespace Test_CSharp
             if (nm.Length < 1)
             {
                 Console.WriteLine("[Essere.cs - Costruttore] Errore, il Nome deve essere presente");
+                throw new ArgumentException("[Essere.cs - Costruttore] Errore, il Nome deve essere presente");
             }
             if (hp < 0)
             {
