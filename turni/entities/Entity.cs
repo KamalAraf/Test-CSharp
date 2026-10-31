@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test_CSharp.turni
+namespace Test_CSharp.turni.entities
 {
     public abstract class Entity : IEntity
     {
