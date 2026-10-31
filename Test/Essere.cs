@@ -4,8 +4,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Test_CSharp.tools;
 
-namespace Test_CSharp
+namespace Test_CSharp.Test
 {
     public class Essere
     {
@@ -60,22 +61,15 @@ namespace Test_CSharp
         }
         public virtual bool Attacca(Essere nemico) // ritorna se è morto o no
         {
-            if (funzioni.EsisteOggetto(nemico) == false) // da fixare in Funzioni.cs ed implementare che si passa con REF
-            {
-                Console.WriteLine("Essere non esiste.");
-                return true;
-            } else
-            {
-                nemico.vita = nemico.vita - _danno;
+            nemico.vita = nemico.vita - _danno;
 
-                if (nemico.vita <= 0)
-                {
-                    Console.WriteLine("Ucciso " + nemico.nome + ".");
-                    nemico = null;
-                    return true;
-                }
-                return false;
+            if (nemico.vita <= 0)
+            {
+               Console.WriteLine("Ucciso " + nemico.nome + ".");
+               nemico = null;
+                return true;
             }
+            return false;
         }
         public virtual void Stampa()
         {

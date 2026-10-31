@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test_CSharp
+namespace Test_CSharp.tools
 {
     internal class Funzioni
     {
@@ -25,11 +25,6 @@ namespace Test_CSharp
                 "double" => Math.Round(rnd.NextDouble() * (end - start) + start, 8),
                 _ => throw GestisciErroreRandom(tipo)
             };
-        }
-
-        public bool EsisteOggetto(object oggetto) // da sistemare in modo che si può passare tutto con ref
-        {
-            return oggetto is not null;
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test_CSharp
+namespace Test_CSharp.Test
 {
     public class ETurni : Essere
     {
@@ -26,11 +26,11 @@ namespace Test_CSharp
         }
         public override void Stampa()
         {
-            Console.WriteLine("Nome: " + base.nome + ", Vita: " + base.vita + ", Danno:" + base.danno + ".");
+            Console.WriteLine("Nome: " + nome + ", Vita: " + vita + ", Danno:" + danno + ".");
         }
         public override string ToString()
         {
-            return "Nome: " + base.nome + ", Vita: " + base.vita + ", Danno:" + base.danno + ".";
+            return "Nome: " + nome + ", Vita: " + vita + ", Danno:" + danno + ".";
         }
     }
 }

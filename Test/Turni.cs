@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test_CSharp.tools;
 
-namespace Test_CSharp
+namespace Test_CSharp.Test
 {
     internal class Turni
     {
@@ -168,11 +169,11 @@ namespace Test_CSharp
 
             if (inizio == 0)
             {
-                return (risultato0 + " (inizio)") + Environment.NewLine + risultato1;
+                return risultato0 + " (inizio)" + Environment.NewLine + risultato1;
             }
             else
             {
-                return (risultato0) + Environment.NewLine + (risultato1 + " (inizio)");
+                return risultato0 + Environment.NewLine + risultato1 + " (inizio)";
             }
         }
     }
