@@ -9,22 +9,6 @@ namespace Test_CSharp
         {
             Console.WriteLine("Test-CSharp");
             Console.WriteLine();
-
-            int[] numeri = [7, 6, 5, 4, 3, 2];
-
-            for (int i = 0; i < numeri.Length; i++)
-            {
-                Console.Write(numeri[i] + " ");
-            }
-            Console.WriteLine();
-
-            Sort.SelectionSort(numeri);
-
-            for (int i = 0; i < numeri.Length; i++)
-            {
-                Console.Write(numeri[i] + " ");
-            }
-
         }
     }
 }
