@@ -7,7 +7,7 @@ using Test_CSharp.test.esercizio_leone_coniglio_carota;
 
 namespace Test_CSharp.test.esercizio_leone_coniglio_carota.elementi
 {
-    public abstract class Base
+    public class Base
     {
         public enum Direzione
         {
@@ -29,7 +29,7 @@ namespace Test_CSharp.test.esercizio_leone_coniglio_carota.elementi
             get { return _posx; }
             set { _posx = value; }
         }
-        public int poy
+        public int posy
         {
             get { return _posy; }
             set { _posy = value; }
@@ -53,7 +53,12 @@ namespace Test_CSharp.test.esercizio_leone_coniglio_carota.elementi
 
         public Base()
         {
+            _posx = 0;
+            _posy = 0;
 
+            _name = "nome";
+            _health = 100;
+            _energy = 100;
         }
         public Base(int posx, int posy, string name, float health, float energy)
         {
@@ -91,19 +96,26 @@ namespace Test_CSharp.test.esercizio_leone_coniglio_carota.elementi
             if (direzione == Direzione.destra)
             {
                 _posx++;
+                _energy -= 10;
             }
             if (direzione == Direzione.sinistra)
             {
                 _posx--;
+                _energy -= 10;
             }
             if (direzione == Direzione.sopra)
             {
                 _posy++;
+                _energy -= 10;
             }
             if (direzione == Direzione.sotto)
             {
                 _posy--;
+                _energy -= 10;
             }
+
+            Console.WriteLine("[test/esercizio-leone-coniglio-carota/Base.cs - Muovi()] Errore, la direzione non è corretta");
+            throw new ArgumentException("[test/esercizio-leone-coniglio-carota/Base.cs - Muovi()] Errore, la direzione non è corretta");
         }
     }
 }
