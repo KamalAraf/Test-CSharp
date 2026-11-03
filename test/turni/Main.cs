@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test_CSharp.turni.entities.enemies
+namespace Test_CSharp.test.turni
 {
-    public abstract class Base : Entity // Base dei Nemici
+    internal class Main
     {
     }
 }

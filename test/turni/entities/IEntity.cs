@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test_CSharp.turni.entities
+namespace Test_CSharp.test.turni.entities
 {
     public interface IEntity
     {

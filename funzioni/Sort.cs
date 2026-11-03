@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test_CSharp.turni
+namespace Test_CSharp.funzioni
 {
-    internal class Main
+    public class Sort // Classe per i metodi sorting
     {
     }
 }
