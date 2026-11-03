@@ -9,5 +9,32 @@ namespace Test_CSharp.test.esercizio_leone_coniglio_carota
 {
     internal class Leone : Base
     {
+        public Leone(int posx, int posy, string name, float health, float energy) : base(posx, posy, name, health, energy)
+        {
+
+        }
+        public override void Muovi(Direzione direzione)
+        {
+            if (direzione == Direzione.destra)
+            {
+                base.posx++;
+                base.energy -= 10;
+            }
+            if (direzione == Direzione.sinistra)
+            {
+                base.posx--;
+                base.energy -= 10;
+            }
+            if (direzione == Direzione.sopra)
+            {
+                base.posy++;
+                base.energy -= 10;
+            }
+            if (direzione == Direzione.sotto)
+            {
+                base.posy--;
+                base.energy -= 10;
+            }
+        }
     }
 }

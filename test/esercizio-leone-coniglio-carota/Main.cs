@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using System.Text;
+using System.Threading.Tasks;
+using Test_CSharp.test.esercizio_leone_coniglio_carota.elementi;
+using Test_CSharp.tools;
+
+namespace Test_CSharp.test.esercizio_leone_coniglio_carota
+{
+    public enum Direzione
+    {
+        sopra,
+        sotto,
+        destra,
+        sinistra
+    }
+    public enum Elemento
+    {
+        coniglio,
+        leone
+    }
+    internal class Main
+    {
+        public static Base Crea(Elemento tipo, int posx, int posy, string name, float health, float energy)
+        {
+            return tipo switch
+            {
+                Elemento.coniglio => new Coniglio(posx, posy, name, health, energy),
+                Elemento.leone => new Leone(posx, posy, name, health, energy),
+                _ => throw new ArgumentException("[test/esercizio-leone-coniglio-carota/Main.cs] Errore, il tipo di oggetto non esiste")
+            };
+        }
+    }
+}
