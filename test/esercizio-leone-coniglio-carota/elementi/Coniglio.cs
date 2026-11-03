@@ -18,23 +18,32 @@ namespace Test_CSharp.test.esercizio_leone_coniglio_carota
             if (direzione == Direzione.destra)
             {
                 base.posx++;
-                base.energy -= 10;
-            }
+                base.energy -= 5;
+            } else
             if (direzione == Direzione.sinistra)
             {
                 base.posx--;
-                base.energy -= 10;
-            }
+                base.energy -= 5;
+            } else
             if (direzione == Direzione.sopra)
             {
                 base.posy++;
-                base.energy -= 10;
-            }
+                base.energy -= 5;
+            } else
             if (direzione == Direzione.sotto)
             {
                 base.posy--;
-                base.energy -= 10;
+                base.energy -= 5;
+            } else if (direzione == Direzione.fermo)
+            {
+                Console.WriteLine("[test/esercizio-leone-coniglio-carota/Coniglio.cs - Muovi()] Errore, la direzione non è corretta");
+                throw new ArgumentException("[test/esercizio-leone-coniglio-carota/Coniglio.cs - Muovi()] Errore, la direzione non è corretta");
             }
+        }
+
+        public override void Mangia()
+        {
+            base.energy += 20;
         }
     }
 }

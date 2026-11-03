@@ -12,9 +12,10 @@ namespace Test_CSharp.test.esercizio_leone_coniglio_carota
     public enum Direzione
     {
         sopra,
-        sotto,
         destra,
-        sinistra
+        sotto,
+        sinistra,
+        fermo
     }
     public enum Elemento
     {

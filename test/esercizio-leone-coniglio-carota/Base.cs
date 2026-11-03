@@ -9,14 +9,6 @@ namespace Test_CSharp.test.esercizio_leone_coniglio_carota.elementi
 {
     public class Base
     {
-        public enum Direzione
-        {
-            sopra,
-            destra,
-            sotto,
-            sinistra
-        }
-
         private int _posx;
         private int _posy;
 
@@ -97,25 +89,36 @@ namespace Test_CSharp.test.esercizio_leone_coniglio_carota.elementi
             {
                 _posx++;
                 _energy -= 10;
-            }
+            } else
             if (direzione == Direzione.sinistra)
             {
                 _posx--;
                 _energy -= 10;
-            }
+            } else
             if (direzione == Direzione.sopra)
             {
                 _posy++;
                 _energy -= 10;
-            }
+            } else
             if (direzione == Direzione.sotto)
             {
                 _posy--;
                 _energy -= 10;
-            }
+            } else
+            if (direzione == Direzione.fermo)
+            {
 
-            Console.WriteLine("[test/esercizio-leone-coniglio-carota/Base.cs - Muovi()] Errore, la direzione non è corretta");
-            throw new ArgumentException("[test/esercizio-leone-coniglio-carota/Base.cs - Muovi()] Errore, la direzione non è corretta");
+            }
+            else
+            {
+                Console.WriteLine("[test/esercizio-leone-coniglio-carota/Base.cs - Muovi()] Errore, la direzione non è corretta");
+                throw new ArgumentException("[test/esercizio-leone-coniglio-carota/Base.cs - Muovi()] Errore, la direzione non è corretta");
+            }
+        }
+
+        public virtual void Mangia()
+        {
+            _energy += 10;
         }
     }
 }

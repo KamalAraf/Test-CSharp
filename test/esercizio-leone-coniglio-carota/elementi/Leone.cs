@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,23 +19,35 @@ namespace Test_CSharp.test.esercizio_leone_coniglio_carota
             if (direzione == Direzione.destra)
             {
                 base.posx++;
-                base.energy -= 10;
-            }
+                base.energy -= 20;
+            } else
             if (direzione == Direzione.sinistra)
             {
                 base.posx--;
-                base.energy -= 10;
-            }
+                base.energy -= 20;
+            } else
             if (direzione == Direzione.sopra)
             {
-                base.posy++;
-                base.energy -= 10;
-            }
+                    base.posy++;
+                base.energy -= 20;
+            } else
             if (direzione == Direzione.sotto)
             {
                 base.posy--;
-                base.energy -= 10;
+                base.energy -= 20;
+            } else if (direzione == Direzione.fermo)
+            {
+
+            } else
+            {
+                Console.WriteLine("[test/esercizio-leone-coniglio-carota/Leone.cs - Muovi()] Errore, la direzione non è corretta");
+                throw new ArgumentException("[test/esercizio-leone-coniglio-carota/Leone.cs - Muovi()] Errore, la direzione non è corretta");
             }
+        }
+
+        public override void Mangia()
+        {
+            base.energy += 40;
         }
     }
 }
