@@ -5,7 +5,6 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using Test_CSharp.test.esercizio_leone_coniglio_carota.elementi;
-using Test_CSharp.tools;
 
 namespace Test_CSharp.test.esercizio_leone_coniglio_carota
 {
