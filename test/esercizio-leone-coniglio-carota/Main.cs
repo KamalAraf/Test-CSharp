@@ -43,14 +43,21 @@ namespace Test_CSharp.test.esercizio_leone_coniglio_carota
             set { _contatore = value; }
         }
 
-        public static Base Crea(Elemento tipo, int posx, int posy, string name, float health, float energy)
+        public Base Crea(Elemento tipo, int posx, int posy, string name, float health, float energy)
         {
-            return tipo switch
+            if (_campo[posy, posx] != null)
             {
-                Elemento.coniglio => new Coniglio(posx, posy, name, health, energy),
-                Elemento.leone => new Leone(posx, posy, name, health, energy),
-                _ => throw new ArgumentException("[test/esercizio-leone-coniglio-carota/Main.cs] Errore, il tipo di oggetto non esiste")
-            };
+                throw new ArgumentException("[test/esercizio-leone-coniglio-carota - Crea] Errore, la cella è già occupata");
+            }
+            else
+            {
+                return tipo switch
+                {
+                    Elemento.coniglio => new Coniglio(posx, posy, name, health, energy),
+                    Elemento.leone => new Leone(posx, posy, name, health, energy),
+                    _ => throw new ArgumentException("[test/esercizio-leone-coniglio-carota/Main.cs] Errore, il tipo di oggetto non esiste")
+                };
+            }
         }
     }
 }

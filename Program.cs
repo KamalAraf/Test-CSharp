@@ -1,5 +1,4 @@
 ﻿using Test_CSharp.funzioni;
-using Test_CSharp.test.tools;
 
 namespace Test_CSharp
 {
